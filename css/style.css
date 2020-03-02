@@ -1,0 +1,42 @@
+body {
+  height: 100%;
+  text-align: center;
+}
+
+.container {
+  width: 280px;
+  height: 450px;
+  margin: 100px auto;
+}
+
+input {
+  text-align: right;
+  font-size: 30px;
+  height: 100px;
+  width: 280px;
+  border: none;
+  background: rgb(0, 0, 0);
+  color: white;
+  font-family: 'Exo';
+}
+
+button {
+  height: 70px;
+  width: 70px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid black;
+  float: left;
+  background: rgb(70, 70, 70);
+  color: white;
+  font-family: 'Exo';
+}
+
+.function {
+  background: rgb(30, 30, 30);
+}
+
+#equal {
+  width: 280px;
+  background: rgb(250, 60, 0);
+}
