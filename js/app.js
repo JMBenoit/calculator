@@ -1,51 +1,29 @@
-function $(value)
-{
-  return document.getElementById(value);
-}
 
-function c(value)
-{
-  return document.getElementsByClassName(value)
-}
+var buttons = document.querySelectorAll('.button');
+var equalBtn = document.querySelector('.equal');
+var clearBtn = document.querySelector('.clear');
+var output = document.querySelector('.output');
 
-var display = 0.0;
+buttons.forEach(function(button) {
+  button.addEventListener('click', function(e) {
+    var value = e.target.dataset.num;
+    output.value += value;
+  });
+});
 
-function numInput()
-{
- console.log('num');
-}
+equalBtn.addEventListener('click', function(e) {
+  try {
+    eval(output.value);
+  } catch (e) {
+    output.value = 'error';
+  } finally {
+    var calc = eval(output.value);
+    output.value = calc;
+  }
+});
 
-function funcInput()
-{
-  console.log('func');
-}
+clearBtn.addEventListener('click', function(e) {
+  output.value = '';
+});
 
-function clearInput()
-{
-  console.log('clear');
-}
-
-function equalInput()
-{
-  console.log('equal');
-}
-
-var numItems = c('num');
-for (var i = 0; i < numItems.length; i++) {
-  numItems[i].addEventListener('click', numInput);
-}
-
-var funcItems = c('function');
-for (var i = 0; i < funcItems.length; i++) {
-  funcItems[i].addEventListener('click', funcInput);
-}
-
-var clearItems = c('clear');
-for (var i = 0; i < clearItems.length; i++) {
-  clearItems[i].addEventListener('click', clearInput);
-}
-
-var equalItems = c('equal');
-for (var i = 0; i < equalItems.length; i++) {
-  equalItems[i].addEventListener('click', equalInput);
-}
+console.log(output);
